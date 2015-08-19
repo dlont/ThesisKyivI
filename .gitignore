@@ -1,10 +1,12 @@
 zenlontko
 
+papers summary
 Figures
 *.aux
 *.log
 *~
 *backup
+bachel_thesis_part.docx
 thesis_ukr.bbl
 thesis_ukr.blg
 thesis_ukr.lof
@@ -12,5 +14,7 @@ thesis_ukr.lot
 thesis_ukr.out
 thesis_ukr.synctex.gz
 thesis_ukr.toc
+thesis_ukr.tcp
+thesis_ukr.tps
 thesis_ukr.dvi
 thesis_ukr.pdf
