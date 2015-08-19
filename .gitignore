@@ -1,0 +1,16 @@
+zenlontko
+
+Figures
+*.aux
+*.log
+*~
+*backup
+thesis_ukr.bbl
+thesis_ukr.blg
+thesis_ukr.lof
+thesis_ukr.lot
+thesis_ukr.out
+thesis_ukr.synctex.gz
+thesis_ukr.toc
+thesis_ukr.dvi
+thesis_ukr.pdf
