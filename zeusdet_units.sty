@@ -1,0 +1,282 @@
+%
+% Use the units package for typesetting units properly
+% Define the detector descriptions accordingly
+%
+\RequirePackage{units}
+\newif\ifzeusunit
+\zeusunittrue
+%------------------------------------------------------------------------------
+%       Standard ZEUS text fragments
+%       ----------------------------
+%       -> references system footnote
+%------------------------------------------------------------------------------
+\newcommand{\ZcoosysAA}{%
+The ZEUS coordinate system is a right-handed Cartesian system, with the $Z$
+axis pointing in the proton beam direction, referred to as the ``forward
+direction'', and the $X$ axis pointing towards the center of HERA.
+The coordinate origin is at the nominal interaction point.\xspace}
+\newcommand{\ZcoosysAE}{%
+The ZEUS coordinate system is a right-handed Cartesian system, with the $Z$
+axis pointing in the proton beam direction, referred to as the ``forward
+direction'', and the $X$ axis pointing towards the centre of HERA.
+The coordinate origin is at the nominal interaction point.\xspace}
+\newcommand{\ZcoosysBA}{%
+The ZEUS coordinate system is a right-handed Cartesian system, with the $Z$
+axis pointing in the nominal proton beam direction, referred to as the ``forward
+direction'', and the $X$ axis pointing towards the center of HERA.
+The coordinate origin is at the center of the CTD.\xspace}
+\newcommand{\ZcoosysBE}{%
+The ZEUS coordinate system is a right-handed Cartesian system, with the $Z$
+axis pointing in the nominal proton beam direction, referred to as the ``forward
+direction'', and the $X$ axis pointing towards the centre of HERA.
+The coordinate origin is at the centre of the CTD.\xspace}
+\newcommand{\ZpsrapA}{%
+The pseudorapidity is defined as $\eta=-\ln\left(\tan\frac{\theta}{2}\right)$,
+where the polar angle, $\theta$, is measured with respect to the
+$Z$ axis.\xspace}
+\newcommand{\ZpsrapB}{%
+The pseudorapidity is defined as $\eta=-\ln\left(\tan\frac{\theta}{2}\right)$,
+where the polar angle, $\theta$, is measured with respect to the
+$Z$ axis. The azimuthal angle, $\phi$, is
+measured with respect to the $X$ axis.\xspace}
+\newcommand{\ZcoosysfnAA}{\footnote{\ZcoosysAA}}
+\newcommand{\ZcoosysfnAE}{\footnote{\ZcoosysBE}}
+\newcommand{\ZcoosysfnBA}{\footnote{\ZcoosysBA}}
+\newcommand{\ZcoosysfnBE}{\footnote{\ZcoosysBE}}
+\newcommand{\ZcoosysfnAAeta}{\footnote{\ZcoosysAA\ZpsrapA}}
+\newcommand{\ZcoosysfnAEeta}{\footnote{\ZcoosysAE\ZpsrapA}}
+\newcommand{\ZcoosysfnAAetaphi}{\footnote{\ZcoosysAA\ZpsrapB}}
+\newcommand{\ZcoosysfnAEetaphi}{\footnote{\ZcoosysBE\ZpsrapB}}
+\newcommand{\ZcoosysfnBAeta}{\footnote{\ZcoosysBA\ZpsrapA}}
+\newcommand{\ZcoosysfnBEeta}{\footnote{\ZcoosysBE\ZpsrapA}}
+\newcommand{\ZcoosysfnBAetaphi}{\footnote{\ZcoosysBA\ZpsrapB}}
+\newcommand{\ZcoosysfnBEetaphi}{\footnote{\ZcoosysBE\ZpsrapB}}
+%------------------------------------------------------------------------------
+%       -> introductory sentence for detector description
+%------------------------------------------------------------------------------
+\newcommand{\Zdetdesc}{%
+A detailed description of the ZEUS detector can be found
+elsewhere~\cite{zeus:1993:bluebook}. A brief outline of the
+components that are most relevant for this analysis is given
+below.\xspace}
+%------------------------------------------------------------------------------
+%       -> CTD description (coordinate system footnote is given as argument)
+%------------------------------------------------------------------------------
+\newcommand{\Zctddesc}[1]{%
+Charged particles were tracked in the central tracking detector (CTD)~\citeCTD,
+which operated in a magnetic field of \unit[1.43]{\tesla} provided by a thin
+superconducting coil. The CTD consisted of 72~cylindrical drift chamber
+layers, organised in nine superlayers covering the polar-angle#1 region
+\mbox{$15\degree < \theta < 164\degree$}. The transverse-momentum resolution for
+full-length tracks is $\sigma(p_T)/p_T=0.0058p_T\oplus0.0065\oplus0.0014/p_T$,
+with $p_T$ in $\GeV$.}
+%------------------------------------------------------------------------------
+%       -> CTD/MVD description (coordinate system footnote is given as argument)
+%------------------------------------------------------------------------------
+\newcommand{\Zctdmvddesc}[1]{%
+In the kinematic range of the analysis, charged particles were tracked
+in the central tracking detector (CTD)~\citeCTD and the microvertex
+detector (MVD)~\citeMVD. These components operated in a magnetic
+field of \unit[1.43]{\tesla} provided by a thin superconducting solenoid. The
+CTD consisted of 72~cylindrical drift-chamber layers, organised in nine
+superlayers covering the polar-angle#1 region
+\mbox{$15\degree < \theta< 164\degree$}.
+%
+The MVD silicon tracker consisted of a barrel (BMVD) and a forward
+(FMVD) section. The BMVD contained three layers and provided
+polar-angle coverage for tracks from $30\degree$ to
+$150\degree$. The four-layer FMVD extended the polar-angle coverage in
+the forward region to $7\degree$. After alignment, the single-hit
+resolution of the MVD was \unit[24]{\micron}. The transverse distance of closest
+approach (DCA) of tracks to the nominal vertex in $X$--$Y$ was measured to have
+a resolution, averaged over the azimuthal angle, of \unit[$(46 \oplus 122 /
+p_{T})$]{\micron}, with $p_{T}$ in \GeV.  For CTD-MVD tracks that pass
+through all nine CTD superlayers, the momentum resolution was
+$\sigma(p_{T})/p_{T} = 0.0029 p_{T} \oplus 0.0081 \oplus
+0.0012/p_{T}$, with $p_{T}$ in \GeV.}
+%------------------------------------------------------------------------------
+%       -> CTD/MVD/STT description (coordinate system footnote is given as argument)
+%------------------------------------------------------------------------------
+\newcommand{\Zctdmvdsttdesc}[1]{%
+In the kinematic range of the analysis, charged particles were tracked
+in the central tracking detector (CTD)~\citeCTD, the microvertex
+detector (MVD)~\citeMVD and the STT~\citeSTT. The CTD and the MVD
+operated in a magnetic field of \unit[1.43]{\tesla} provided by a thin
+superconducting solenoid. The CTD drift chamber covered the
+polar-angle#1 region $15\degree < \theta < 164\degree$. The MVD
+silicon tracker consisted of a barrel (BMVD) and a forward (FMVD)
+section. The BMVD provided polar angle coverage for tracks with three
+measurements from $30\degree$ to $150\degree$. The FMVD extended the
+polar-angle coverage in the forward region to $7\degree$. The STT
+covered the polar-angle region $5\degree <\theta < 25\degree$.}
+%------------------------------------------------------------------------------
+%       -> STT description
+%------------------------------------------------------------------------------
+\newcommand{\Zsttdesc}{%
+The STT consisted of 48 sectors of two different sizes. Each sector
+contained 192 (small sector) or 264 (large sector) straws of diameter
+\unit[7.5]{\mm} arranged into 3 layers. The sectors were trapezoidal in shape
+and each subtended an azimuthal angle of $60\degree$ -- 6 sectors
+formed a so-called superlayer. A particle passing through the complete
+detector traversed 8 superlayers, which were rotated around the beam
+direction at angles of $30\degree$ or $15\degree$ to each other. The STT
+covered the polar-angle region $5\degree < \theta < 23\degree$.
+}
+%------------------------------------------------------------------------------
+%       -> CAL description
+%------------------------------------------------------------------------------
+\newcommand{\Zcaldesc}{%
+The high-resolution uranium--scintillator calorimeter (CAL)~\citeCAL
+consisted of three parts: the forward (FCAL), the barrel (BCAL) and
+the rear (RCAL) calorimeters. Each part was subdivided transversely
+into towers and longitudinally into one electromagnetic section (EMC)
+and either one (in RCAL) or two (in BCAL and FCAL) hadronic sections
+(HAC). The smallest subdivision of the calorimeter was called a cell.
+The CAL energy resolutions, as measured under test-beam conditions,
+were $\sigma(E)/E=0.18/\sqrt{E}$ for electrons and
+$\sigma(E)/E=0.35/\sqrt{E}$ for hadrons, with $E$ in \GeV.}
+%------------------------------------------------------------------------------
+%       -> HES description
+%------------------------------------------------------------------------------
+\newcommand{\Zhesdesc}{%
+The position of electrons scattered at small angles to the
+electron-beam directions was determined with the help of RHES\citeHES,
+which consisted of a layer of approximately $10\,000$ (\unit[$2.96\times
+3.32$]{$\cm^2$}) silicon-pad detectors inserted in the RCAL at a
+depth of 3.3 radiation lengths.}
+%------------------------------------------------------------------------------
+%       -> MUON description
+%------------------------------------------------------------------------------
+\newcommand{\Zmuondesc}{%
+The muon system consisted of rear, barrel (R/BMUON) and forward
+(FMUON) tracking detectors. The B/RMUON consisted of limited--streamer
+(LS) tube chambers placed behind the BCAL (RCAL), inside and outside a
+magnetized iron yoke surrounding the CAL. The barrel and rear muon
+chambers cover polar angles from $34\degree$ to $135\degree$ and from
+$135\degree$ to $171\degree$, respectively. The FMUON consisted of six
+trigger planes of LS tubes and four planes of drift chambers covering
+the angular region from $5\degree$ to $32\degree$. The muon system
+exploited the magnetic field of the iron yoke and, in the forward
+direction, of two iron toroids magnetized to $\approx\unit[1.6]{\tesla}$
+to provide an independent measurement of the muon momentum.}
+%------------------------------------------------------------------------------
+%       -> BAC description
+%------------------------------------------------------------------------------
+\newcommand{\Zbacdesc}{%
+The iron yoke surrounding the CAL was instrumented with proportional
+drift chambers to form the Backing Calorimeter (BAC)~\citeBAC.  The
+BAC consisted of 5142 aluminium chambers inserted into the gaps
+between \unit[7.3]{\cm} thick iron plates (10, 9 and 7 layers in forecap,
+barrel and rearcap, respectively) serving as calorimeter absorber.
+The chambers were typically \unit[5]{\met} long and had a wire spacing of
+\unit[1.5]{\cm}. The anode wires were covered by \unit[50]{\cm} long cathode
+pads. The BAC was equipped with energy
+readout and position sensitive readout for muon tracking.  The former
+was based on 1692 pad towers (\unit[$50 \times 50$]{$\cm^2$}), providing an
+energy resolution of $\sim$\unit[100]{\%}$/\sqrt E$, with $E$ in \GeV. The position information
+from the wires allowed the reconstruction of muon trajectories in two
+dimensions ($XY$ in barrel and $YZ$ in endcaps) with spatial accuracy
+of a few \mm.}
+%------------------------------------------------------------------------------
+%       -> LUMI description (The actual lumi uncertainty in percent is given as the argument)
+%------------------------------------------------------------------------------
+\newcommand{\Zlumidesc}{%
+The luminosity was measured using the Bethe-Heitler reaction
+$ep\,\rightarrow\, e\gamma p$ by a luminosity detector which
+consisted of independent lead--scintillator calorimeter\citePCAL and
+magnetic spectrometer\citeSPECTRO systems.}
+% The fractional
+%  systematic uncertainty on the measured luminosity was #1.}
+\newcommand{\ZlumidescA}[1]{%
+The luminosity was measured using the Bethe-Heitler reaction
+$ep\,\rightarrow\, e\gamma p$ by a luminosity detector which consisted
+of independent lead-scintillator calorimeter\citePCAL and magnetic
+spectrometer\citeSPECTRO systems. The fractional systematic
+uncertainty on the measured luminosity was \unit[#1]{\%}.}
+%------------------------------------------------------------------------------
+%       -> 6mT description
+%------------------------------------------------------------------------------
+\newcommand{\ZSixmTdesc}{%
+Scattered electrons emerging from $eP$ interactions at very small
+angles were detected in a small tungsten--scintillator calorimeter
+located approximately \unit[6]{\met} from the interaction point in the rear
+direction, referred to as the ``6m-tagger''~\citeSixmT. For
+electrons in the energy range $4.1 \le E_e \le 7.4$ the acceptance is
+very close to one with very high purity.}
+%------------------------------------------------------------------------------
+%       -> Standard Acknowledgements
+%------------------------------------------------------------------------------
+\newcommand{\Zacknowledge}{%
+We appreciate the contributions to the construction, maintenance and operation of
+the ZEUS detector of many people who are not listed as authors. The
+HERA machine group and the DESY computing staff are especially
+acknowledged for their success in providing excellent operation of the
+collider and the data-analysis environment. We thank the DESY
+directorate for their strong support and encouragement.}
+%------------------------------------------------------------------------------
+%       -> physics units (eV and multiples)
+%------------------------------------------------------------------------------
+\newcommand{\eVdist}{\kern-0.06667em}
+\newcommand{\Ev}{{\text{e}\eVdist\text{V\/}}}
+\newcommand{\Kev}{{\text{ke}\eVdist\text{V\/}}}
+\newcommand{\Mev}{{\text{Me}\eVdist\text{V\/}}}
+\newcommand{\Gev}{{\text{Ge}\eVdist\text{V\/}}}
+\newcommand{\Tev}{{\text{Te}\eVdist\text{V\/}}}
+\newcommand{\ev}{{\,\text{e}\eVdist\text{V\/}}}
+\newcommand{\kev}{{\,\text{ke}\eVdist\text{V\/}}}
+\newcommand{\mev}{{\,\text{Me}\eVdist\text{V\/}}}
+\newcommand{\gev}{{\,\text{Ge}\eVdist\text{V\/}}}
+\newcommand{\tev}{{\,\text{Te}\eVdist\text{V\/}}}
+%------------------------------------------------------------------------------
+%       -> various other units
+%------------------------------------------------------------------------------
+\newcommand{\mb}{\,\text{mb}}
+\newcommand{\mub}{\,\upmu\text{b}}
+\newcommand{\nb}{\,\text{nb}}
+\newcommand{\pb}{\,\text{pb}}
+\newcommand{\fb}{\,\text{fb}}
+\newcommand{\mubi}{\,\upmu\text{b}^{-1}}
+\newcommand{\mbi}{\,\text{mb}^{-1}}
+\newcommand{\nbi}{\,\text{nb}^{-1}}
+\newcommand{\pbi}{\,\text{pb}^{-1}}
+\newcommand{\fbi}{\,\text{fb}^{-1}}
+\newcommand{\met}{\,\text{m}}
+\newcommand{\nm}{\,\text{nm}}
+\newcommand{\mum}{\,\upmu\text{m}}
+\newcommand{\mm}{\,\text{mm}}
+\newcommand{\cm}{\,\text{cm}}
+\newcommand{\km}{\,\text{km}}
+\newcommand{\Amp}{\,\text{A}}
+\newcommand{\nA}{\,\text{nA}}
+\newcommand{\muA}{\,\upmu\text{A}}
+\newcommand{\mA}{\,\text{mA}}
+\newcommand{\kA}{\,\text{kA}}
+\newcommand{\Hz}{\,\text{Hz}}
+\newcommand{\kHz}{\,\text{kHz}}
+\newcommand{\MHz}{\,\text{MHz}}
+\newcommand{\GHz}{\,\text{GHz}}
+\newcommand{\ppm}{\,\text{ppm}}
+\newcommand{\ppb}{\,\text{ppb}}
+\newcommand{\scd}{\,\text{s}}
+\newcommand{\ps}{\,\text{ps}}
+\newcommand{\ns}{\,\text{ns}}
+\newcommand{\mus}{\,\upmu\text{s}}
+\newcommand{\ms}{\,\text{ms}}
+\newcommand{\rad}{\,\text{rad}}
+\newcommand{\murad}{\,\upmu\text{rad}}
+\newcommand{\mrad}{\,\text{mrad}}
+\newcommand{\gra}{\,\text{g}}
+\newcommand{\pg}{\,\text{pg}}
+\newcommand{\nang}{\,\text{ng}}
+\newcommand{\mug}{\,\upmu\text{g}}
+\newcommand{\mg}{\,\text{mg}}
+\newcommand{\kg}{\,\text{kg}}
+\newcommand{\Tesla}{\,\text{T}}
+\newcommand{\Kelvin}{\,\text{K}}
+%------------------------------------------------------------------------------
+% Units used in hepunits
+%------------------------------------------------------------------------------
+\newcommand{\degree}{\ensuremath{^{\circ}}}
+\newcommand{\tesla}{\ensuremath{\,\text{T}}}
+\newcommand{\micron}{\ensuremath{\upmu\text{m}}}
+\newcommand{\GeV}{{\text{Ge}\eVdist\text{V\/}}}
